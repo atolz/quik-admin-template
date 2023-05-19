@@ -1,0 +1,37 @@
+.infinity-scroll {
+    /* animation: scroll 30s linear infinite; */
+    animation: scroll 38s linear 0s infinite normal forwards;
+
+
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(-100%);
+        opacity: .6;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(var(--height));
+    }
+}
+
+.drawn {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 1s linear forwards;
+}
+
+@keyframes draw {
+    from {
+        stroke-dashoffset: 1000;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
