@@ -9,7 +9,7 @@ const SideBarLayout = ({ children }) => {
       <SideBar isMobileNavOpened={isMobileNavOpened} setIsMobileNavOpened={setIsMobileNavOpened} />
       <section className="flex-1 ">
         <Header isMobileNavOpened={isMobileNavOpened} setIsMobileNavOpened={setIsMobileNavOpened} />
-        <div>{children}</div>
+        <div className=" h-[calc(100vh-_4rem)] overflow-y-scroll">{children}</div>
       </section>
     </div>
   );
