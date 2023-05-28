@@ -42,7 +42,7 @@ const InputField = forwardRef(({ label, onChange = () => {}, inputClassName, roo
         }}
         id={inputId}
         {...props}
-        className={` cursor-text focus:cursor-text peer absolute top-0 left-0 h-full  w-full px-3 pt-[26px] pb-[12px] text-sm text-[#4F4F4F] placeholder:text-[#97A0AF] rounded-lg bg-[#F0F3F5] border-[#BDBDBD] border focus:shadow-none focus:ring-0 focus:border-color-primary focus:outline-none ${inputClassName}`}
+        className={` cursor-text focus:cursor-text peer relative top-0 left-0 h-full min-w-[200px]  w-full px-3 pt-[26px] pb-[12px] text-sm text-[#4F4F4F] placeholder:text-[#97A0AF] rounded-lg bg-[#F0F3F5] border-[#BDBDBD] border focus:shadow-none focus:ring-0 focus:border-color-primary focus:outline-none ${inputClassName}`}
         ref={ref || inputRef}
         placeholder=""
       />

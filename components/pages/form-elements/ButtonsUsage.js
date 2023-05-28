@@ -3,6 +3,7 @@ import UsageContainer from "../docs/UsageContainer";
 import Button from "@/components/form-elements/Button";
 import ButtonWarn from "@/components/form-elements/ButtonWarn";
 import ButtonError from "@/components/form-elements/ButtonError";
+import ButtonSecondary from "@/components/form-elements/ButtonSecondary";
 
 const ButtonsUsage = () => {
   return (
@@ -16,6 +17,14 @@ const ButtonsUsage = () => {
             <Button loading={true} outlined={true}>
               Primary Button Outlined Loading
             </Button>
+          </div>
+          <div className="flex flex-wrap items-center gap-4">
+            <ButtonSecondary className={" !rounded-md"}>Secondary Button</ButtonSecondary>
+            <ButtonSecondary outlined={true}>Secondary Button Outlined</ButtonSecondary>
+            <ButtonSecondary loading={true}>Secondary Button Loading</ButtonSecondary>
+            <ButtonSecondary loading={true} outlined={true}>
+              Secondary Button Outlined Loading
+            </ButtonSecondary>
           </div>
           <div className="flex flex-wrap items-center gap-4">
             <ButtonError>Error Button</ButtonError>

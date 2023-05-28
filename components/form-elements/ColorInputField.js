@@ -1,7 +1,7 @@
 import React, { forwardRef, useEffect, useRef, useState } from "react";
 import InputField from "./InputField";
 
-const ColorInputField = forwardRef(({ value = "#9B51E0", onChange = () => {}, ...props }, ref) => {
+const ColorInputField = forwardRef(({ value = "#9B51E0", onChange = () => {}, inputClassName, rootClassName, ...props }, ref) => {
   const [inputText, setInputText] = useState(value);
   const inputRef = useRef(null);
 
@@ -28,7 +28,8 @@ const ColorInputField = forwardRef(({ value = "#9B51E0", onChange = () => {}, ..
       {...props}
       ref={ref || inputRef}
       type="color"
-      inputClassName=" !pr-[95%] !py-5 w-full overflow-hidden"
+      inputClassName={`!pr-[95%] !py-5  w-0  overflow-hidden ${inputClassName}`}
+      rootClassName={`${rootClassName}`}
       value={value}
       onChange={handleColorChange}
       style={{
