@@ -1,7 +1,7 @@
 import SideBarLayout from "@/components/layouts/SideBarLayout";
 import AppContainer from "@/components/layouts/containers/AppContainer";
 import AppDialogUsage from "@/components/pages/docs/AppDialogUsage";
-import ButtonsUsage from "@/components/pages/docs/ButtonsUsage";
+import ButtonsUsage from "@/components/pages/form-elements/ButtonsUsage";
 import TableUsage from "@/components/pages/docs/TableUsage";
 import React from "react";
 
@@ -24,10 +24,8 @@ const Docs = () => {
           <li>Tabs</li>
           <li>Icons</li>
         </ul>
-        <div>
+        <div className="flex-1">
           <AppDialogUsage />
-          <ButtonsUsage />
-          <TableUsage />
         </div>
       </div>
     </AppContainer>

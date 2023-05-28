@@ -1,16 +1,26 @@
 import React, { useState } from "react";
 import OtpInput from "react-otp-input";
 
-const OTPInput = ({ inputNums = 6, onChange = (val) => {}, error = false, placeholder = "1234" }) => {
+const OTPInput = ({
+  inputNums = 6,
+  shouldAutoFocus = false,
+  onChange = (val) => {},
+  error = false,
+  placeholder = "123456",
+  inputClassName = " ",
+  rootContainerClassName = " ",
+  inputType = "text",
+  inputProps = {},
+}) => {
   const [inputVal, setInputVal] = useState("");
   const handleInputValChange = (val) => {
+    console.log("OTP value is", val);
     setInputVal(val);
     onChange(val);
   };
   return (
     <OtpInput
-      containerStyle="grid gap-2 "
-      inputStyle="bg-[rgba(19,124,75,0.1)] !w-[47px] h-[47px] text-base font-medium border border-solid text-color-primary rounded placeholder:text-transparent placeholder-shown:bg-white"
+      containerStyle={`flex flex-wrap justify-center w-max gap-y-2 ${rootContainerClassName}`}
       //   inputStyle={{
       //     background: "white",
       //     width: "47px",
@@ -23,19 +33,26 @@ const OTPInput = ({ inputNums = 6, onChange = (val) => {}, error = false, placeh
       //       height: "40px",
       //     },
       //   }}
-      focusStyle={{
-        outline: "1px solid var(--color-primary)",
-      }}
+
       placeholder={placeholder}
       hasErrored={error}
       errorStyle={{
         outline: "1px solid red",
       }}
-      shouldAutoFocus={true}
+      shouldAutoFocus={shouldAutoFocus}
       value={inputVal}
       onChange={handleInputValChange}
       numInputs={inputNums}
-      separator={<span>&nbsp;</span>}
+      // renderSeparator={<span>&nbsp;</span>}
+      renderInput={(props) => (
+        <input
+          {...props}
+          type={inputType}
+          {...inputProps}
+          autoComplete="new-password"
+          className={` cursor-text focus:cursor-text !h-10 !w-10 !p-0 text-base text-[#4F4F4F] placeholder:text-[#97A0AF] rounded-lg bg-[#F0F3F5] border-[#BDBDBD] border focus:shadow-none focus:ring-0 focus:border-color-primary focus:outline-none mx-1 ${inputClassName}`}
+        />
+      )}
     />
   );
 };

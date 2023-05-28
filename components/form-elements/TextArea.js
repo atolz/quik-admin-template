@@ -5,10 +5,10 @@ const TextArea = forwardRef(({ label, placeholder, inputClassName, rootClassName
   let id = useId();
   const [isDirty, setIsDirty] = useState(false);
   return (
-    <div className={`relative min-h-[100px] ${rootClassName}`}>
+    <div className={`relative  ${rootClassName}`}>
       <textarea
         id={id}
-        className={`peer absolute top-0 left-0 h-full  w-full px-3 pt-[26px] pb-[12px] text-sm text-[#4F4F4F] placeholder:text-[#97A0AF] rounded-lg bg-[#F0F3F5] border-[#BDBDBD] border focus:shadow-none focus:ring-0 focus:border-color-primary focus:outline-none ${inputClassName}`}
+        className={`peer relative top-0 left-0 h-full  w-full px-3 pt-[20px] pb-[12px] text-sm text-[#4F4F4F] placeholder:text-[#97A0AF] rounded-lg bg-[#F0F3F5] border-[#BDBDBD] border focus:shadow-none focus:ring-0 focus:border-color-primary focus:outline-none ${inputClassName}`}
         rows="5"
         cols="33"
         ref={ref}
@@ -26,8 +26,8 @@ const TextArea = forwardRef(({ label, placeholder, inputClassName, rootClassName
 
       {label && (
         <label
-          className={` absolute top-7  left-3 transition-all
-          ${props.value?.length > 0 || isDirty ? " !top-1 -translate-y-0 text-[#BDBDBD] text-xs" : " top-1/2 -translate-y-1/2 text-[#828282] text-sm "}
+          className={` absolute top-7 z-10  left-3 transition-all bg-[#F0F3F5]
+          ${props.value?.length > 0 || isDirty ? " !top-1 -translate-y-0 text-[#BDBDBD] text-xs" : " top-1/2 -translate-y-[60%] text-[#828282] text-sm "}
           peer-focus:top-1 peer-focus:-translate-y-0 peer-focus:text-[#BDBDBD] peer-focus:text-xs
           block ${labelClassName}`}
           for={id}

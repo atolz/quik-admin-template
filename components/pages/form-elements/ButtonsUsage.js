@@ -1,5 +1,5 @@
 import React from "react";
-import UsageContainer from "./UsageContainer";
+import UsageContainer from "../docs/UsageContainer";
 import Button from "@/components/form-elements/Button";
 import ButtonWarn from "@/components/form-elements/ButtonWarn";
 import ButtonError from "@/components/form-elements/ButtonError";
@@ -9,7 +9,7 @@ const ButtonsUsage = () => {
     <div>
       <UsageContainer title={"#Buttons"}>
         <div className=" space-y-5">
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             <Button>Primary Button</Button>
             <Button outlined={true}>Primary Button Outlined</Button>
             <Button loading={true}>Primary Button Loading</Button>
@@ -17,7 +17,7 @@ const ButtonsUsage = () => {
               Primary Button Outlined Loading
             </Button>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             <ButtonError>Error Button</ButtonError>
             <ButtonError className={" !rounded-lg"} outlined={true}>
               Error Button Outlined
@@ -28,12 +28,12 @@ const ButtonsUsage = () => {
             </ButtonError>
             <ButtonError className={" !rounded-lg"}>Error Button With Overide className</ButtonError>
           </div>
-          <div className="flex items-center gap-4">
-            <ButtonWarn>Error Button</ButtonWarn>
-            <ButtonWarn outlined={true}>Error Button Outlined</ButtonWarn>
+          <div className="flex flex-wrap items-center gap-4">
+            <ButtonWarn>Warn Button</ButtonWarn>
+            <ButtonWarn outlined={true}>Warn Button Outlined</ButtonWarn>
             <ButtonWarn loading={true}>Loading</ButtonWarn>
             <ButtonWarn>
-              <span className=" mr-2">Error Button</span>
+              <span className=" mr-2">Warn Button With Icon</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                 <path
                   strokeLinecap="round"
@@ -43,6 +43,7 @@ const ButtonsUsage = () => {
               </svg>
             </ButtonWarn>
           </div>
+          <div>To create your reusable button see the error button or warn button for how.</div>
         </div>
       </UsageContainer>
     </div>

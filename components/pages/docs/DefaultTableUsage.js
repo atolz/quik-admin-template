@@ -9,9 +9,8 @@ import UsageContainer from "./UsageContainer";
 import TableUsageWithStylesAndVariations from "./TableUsageWithStylesAndVariations";
 import ButtonWarn from "@/components/form-elements/ButtonWarn";
 import Button from "@/components/form-elements/Button";
-import DefaultTableUsage from "./DefaultTableUsage";
 
-const TableUsage = () => {
+const DefaultTableUsage = () => {
   let tableHeaderCols = ["Col 1", "Col 2", "Col 3", "Action"];
   let [tableData, setTableData] = useState([
     { title: "First title", date: "2020", amount: 20 },
@@ -37,13 +36,38 @@ const TableUsage = () => {
   //   i.e and array of objects or rows if how ever u choose to call it
   let finalData = filteredData;
   return (
-    <div className={""}>
-      <h2 className=" mb-4 font-medium text-xl text-color-primary">{"Table usage pattern"}</h2>
-      <DefaultTableUsage />
-      {/* Table variation and styling usage */}
-      <TableUsageWithStylesAndVariations />
-    </div>
+    <UsageContainer title={"Default Table"}>
+      {/* <h3 className=" mb-4 font-medium text-base text-color-primary">Basic Default Table</h3> */}
+      <div className=" w-full overflow-scroll scroll_hide">
+        <Table>
+          <TableHead>
+            {tableHeaderCols?.map((colName, i) => {
+              return (
+                <TableHeadCol key={i}>
+                  {colName}
+                  {/* Pass in className for any tailwind style class u want to customize */}
+                  {/* Add any extra logic or element that goes in the head col */}
+                  {/* Maybe a sort button  or icon, of ur choice */}
+                </TableHeadCol>
+              );
+            })}
+          </TableHead>
+          <TableBody>
+            {finalData?.map((el, i) => {
+              return (
+                <TableBodyRow key={i}>
+                  <TableBodyCol>{el.title}</TableBodyCol>
+                  <TableBodyCol>{el.amount}</TableBodyCol>
+                  <TableBodyCol>{el.date}</TableBodyCol>
+                  <TableBodyCol>Action</TableBodyCol>
+                </TableBodyRow>
+              );
+            })}
+          </TableBody>
+        </Table>
+      </div>
+    </UsageContainer>
   );
 };
 
-export default TableUsage;
+export default DefaultTableUsage;

@@ -6,9 +6,11 @@ import TableHead from "@/components/table/TableHead";
 import TableHeadCol from "@/components/table/TableHeadCol";
 import React, { useState } from "react";
 import UsageContainer from "./UsageContainer";
+import Button from "@/components/form-elements/Button";
+import ButtonWarn from "@/components/form-elements/ButtonWarn";
 
 const TableUsageWithStylesAndVariations = () => {
-  let tableHeaderCols = ["Col 1", "Col 2", "Col 3"];
+  let tableHeaderCols = ["Col 1", "Col 2", "Col 3", "Action"];
   let [tableData, setTableData] = useState([
     { title: "First title", date: "2020", amount: 20 },
     { title: "First title", date: "2023", amount: 50 },
@@ -36,10 +38,10 @@ const TableUsageWithStylesAndVariations = () => {
     <UsageContainer title={"Table with styling and variation"}>
       <div>
         <Table>
-          <TableHead>
+          <TableHead className={" !uppercase"}>
             {tableHeaderCols?.map((colName, i) => {
               return (
-                <TableHeadCol key={i} className={" !px-0 !py-0"} divClassName={" !rounded-none"}>
+                <TableHeadCol key={i} className={" px-2"} divClassName={" rounded-lg"}>
                   {colName}
                   {/* Pass in className for any tailwind style class u want to customize */}
                   {/* Add any extra logic or element that goes in the head col */}
@@ -54,7 +56,8 @@ const TableUsageWithStylesAndVariations = () => {
                 <TableBodyRow className={" even:!bg-slate-100 !bg-transparent"} key={i}>
                   <TableBodyCol className={" rounded-l-2xl "}>{el.title}</TableBodyCol>
                   <TableBodyCol className={""}>{el.amount}</TableBodyCol>
-                  <TableBodyCol className={"rounded-r-2xl "}>{el.date}</TableBodyCol>
+                  <TableBodyCol>{el.date}</TableBodyCol>
+                  <TableBodyCol className={"rounded-r-2xl "}>{i == 0 ? <Button>Action One</Button> : <ButtonWarn>Action Variation</ButtonWarn>}</TableBodyCol>{" "}
                 </TableBodyRow>
               );
             })}
