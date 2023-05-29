@@ -42,7 +42,7 @@ const SideBarNav = ({ setIsMobileNavOpened, isMobileNavOpened }) => {
       pageLink: `/form-elements`,
       navLink: `/form-elements`,
       page: "admin",
-      icon: <IconForms />,
+      icon: <IconMedal size={24} strokeWidth={2} />,
     },
     {
       name: "Tables",
