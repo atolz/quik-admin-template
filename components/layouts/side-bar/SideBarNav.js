@@ -10,7 +10,7 @@ const SideBarNav = ({ setIsMobileNavOpened, isMobileNavOpened }) => {
 
   const defaultNavs = [
     {
-      name: "Page One",
+      name: "Page One - Extra long name for test",
       pageLink: `/`,
       navLink: "/",
       page: "admin",
@@ -30,13 +30,7 @@ const SideBarNav = ({ setIsMobileNavOpened, isMobileNavOpened }) => {
       page: "admin",
       icon: <IconMedal size={24} strokeWidth={2} />,
     },
-    {
-      name: "Components Docs",
-      pageLink: `/docs`,
-      navLink: `/docs`,
-      page: "admin",
-      icon: <IconMedal size={24} strokeWidth={2} />,
-    },
+
     {
       name: "Form Elements",
       pageLink: `/form-elements`,
@@ -49,7 +43,14 @@ const SideBarNav = ({ setIsMobileNavOpened, isMobileNavOpened }) => {
       pageLink: `/tables`,
       navLink: `/tables`,
       page: "admin",
-      icon: <IconTable size={24} />,
+      icon: <IconMedal size={24} strokeWidth={2} />,
+    },
+    {
+      name: "Components Docs",
+      pageLink: `/docs`,
+      navLink: `/docs`,
+      page: "admin",
+      icon: <IconMedal size={24} strokeWidth={2} />,
     },
   ];
 
@@ -82,7 +83,7 @@ const SideBarNav = ({ setIsMobileNavOpened, isMobileNavOpened }) => {
             >
               <span className={`flex items-center  ${isActive(nav.navLink) ? " text-color-secondary" : " text-white"}`}>
                 {nav?.icon}
-                <span title={nav.name} className={`ml-6  whitespace-nowrap text-ellipsis overflow-hidden text-base font-normal ${isActive(nav.navLink) ? " text-color-secondary" : " text-white"}`}>
+                <span title={nav.name} className={`ml-6 line-clamp-1  text-base font-normal ${isActive(nav.navLink) ? " text-color-secondary" : " text-white"}`}>
                   {nav.name}
                 </span>
               </span>
