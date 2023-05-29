@@ -5,7 +5,7 @@ import TableBodyRow from "@/components/table/TableBodyRow";
 import TableHead from "@/components/table/TableHead";
 import TableHeadCol from "@/components/table/TableHeadCol";
 import React, { useState } from "react";
-import UsageContainer from "./UsageContainer";
+import UsageContainer from "../docs/UsageContainer";
 import TableUsageWithStylesAndVariations from "./TableUsageWithStylesAndVariations";
 import ButtonWarn from "@/components/form-elements/ButtonWarn";
 import Button from "@/components/form-elements/Button";

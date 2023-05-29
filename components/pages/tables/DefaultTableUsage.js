@@ -5,12 +5,13 @@ import TableBodyRow from "@/components/table/TableBodyRow";
 import TableHead from "@/components/table/TableHead";
 import TableHeadCol from "@/components/table/TableHeadCol";
 import React, { useState } from "react";
-import UsageContainer from "./UsageContainer";
-import Button from "@/components/form-elements/Button";
+import UsageContainer from "../docs/UsageContainer";
+import TableUsageWithStylesAndVariations from "./TableUsageWithStylesAndVariations";
 import ButtonWarn from "@/components/form-elements/ButtonWarn";
+import Button from "@/components/form-elements/Button";
 
-const TableUsageWithStylesAndVariations = () => {
-  let tableHeaderCols = ["Col 1", "Col 2", "Col 3", "Action"];
+const DefaultTableUsage = ({ data }) => {
+  let tableHeaderCols = ["Col 1", "Amount", "Col 3", "Action"];
   let [tableData, setTableData] = useState([
     { title: "First title", date: "2020", amount: 20 },
     { title: "First title", date: "2023", amount: 50 },
@@ -21,9 +22,13 @@ const TableUsageWithStylesAndVariations = () => {
   //   EG. sorting the table data by date which is then filtered by another condition (e.g amount > 30); tableData -> sortedByDate -> finalData
   //   tableData -> sortedByDate -> finalData
 
-  let sortedDataByDate = () => {
+  let sortedDataByDate = (objArray) => {
     // Sort table data based on date
-    return tableData;
+    return objArray?.sort((a, b) => {
+      const dateA = new Date(a["date"]);
+      const dateB = new Date(b["date"]);
+      return latest ? dateA - dateB : dateB - dateA;
+    });
   };
   let filteredData = sortedDataByDate()?.filter((el) => {
     // Filter logic
@@ -35,13 +40,14 @@ const TableUsageWithStylesAndVariations = () => {
   //   i.e and array of objects or rows if how ever u choose to call it
   let finalData = filteredData;
   return (
-    <UsageContainer title={"Table with styling and variation"}>
-      <div>
+    <UsageContainer title={"Default Table"}>
+      {/* <h3 className=" mb-4 font-medium text-base text-color-primary">Basic Default Table</h3> */}
+      <div className=" w-full overflow-scroll scroll_hide">
         <Table>
-          <TableHead className={" !uppercase"}>
+          <TableHead>
             {tableHeaderCols?.map((colName, i) => {
               return (
-                <TableHeadCol key={i} className={" px-2"} divClassName={" rounded-lg"}>
+                <TableHeadCol key={i}>
                   {colName}
                   {/* Pass in className for any tailwind style class u want to customize */}
                   {/* Add any extra logic or element that goes in the head col */}
@@ -51,13 +57,13 @@ const TableUsageWithStylesAndVariations = () => {
             })}
           </TableHead>
           <TableBody>
-            {finalData?.map((el, i) => {
+            {data?.map((el, i) => {
               return (
-                <TableBodyRow className={" even:!bg-slate-100 !bg-transparent"} key={i}>
-                  <TableBodyCol className={" rounded-l-2xl "}>{el.title}</TableBodyCol>
-                  <TableBodyCol className={""}>{el.amount}</TableBodyCol>
+                <TableBodyRow key={i}>
+                  <TableBodyCol>{el.title}</TableBodyCol>
+                  <TableBodyCol>{el.amount}</TableBodyCol>
                   <TableBodyCol>{el.date}</TableBodyCol>
-                  <TableBodyCol className={"rounded-r-2xl "}>{i == 0 ? <Button>Action One</Button> : <ButtonWarn>Action Variation</ButtonWarn>}</TableBodyCol>{" "}
+                  <TableBodyCol>Action</TableBodyCol>
                 </TableBodyRow>
               );
             })}
@@ -68,4 +74,4 @@ const TableUsageWithStylesAndVariations = () => {
   );
 };
 
-export default TableUsageWithStylesAndVariations;
+export default DefaultTableUsage;

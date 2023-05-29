@@ -4,7 +4,7 @@
 
 ## Variables can be added to the tailwind config e.g extend tailwind colors, font family. This can provide intellisense when typing in className prop on jsx
 
-## Change the default text color of app in global.css in tailwind @layer base body{}::: Chaning the css default text color in the :root{} selector
+<!-- ## Change the default text color of app in global.css in tailwind @layer base body{}::: Chaning the css default text color in the :root{} selector -->
 
 ## To hide scroll bars use: scroll_hide class-name in the styles/global.css
 
@@ -22,3 +22,4 @@
 ## Note on Icons
 
 ::Get icons from: https://heroicons.com/
+::Or - https://github.com/tabler/tabler-icons/tree/master/packages/icons-react
