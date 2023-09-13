@@ -1,0 +1,15 @@
+.PhoneInput {
+    /* background-color: aqua; */
+    position: relative;
+}
+
+.PhoneInputCountry {
+    position: absolute !important;
+    top: 50% !important;
+    left: 0 !important;
+    z-index: 10;
+    /* background-color: red; */
+    transform: translateY(-50%);
+    margin-left: 12px;
+
+}

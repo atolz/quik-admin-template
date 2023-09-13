@@ -30,6 +30,7 @@
   --color-grey-1: #858484;
   --color-bg: #F6FBFD;
   --color-border: #DFE1E6;
+  /* --PhoneInput-color--focus: var(--color-primary) !important; */
 }
 
 input[type="date"]:in-range::-webkit-datetime-edit-year-field, input[type="date"]:in-range::-webkit-datetime-edit-month-field, input[type="date"]:in-range::-webkit-datetime-edit-day-field, input[type="date"]:in-range::-webkit-datetime-edit-text {

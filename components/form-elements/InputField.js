@@ -1,6 +1,6 @@
 import React, { forwardRef, useEffect, useId, useRef, useState } from "react";
 
-const InputField = forwardRef(({ label, onChange = () => {}, inputClassName, rootClassName, labelClassName, children = () => {}, ...props }, ref) => {
+const InputField = forwardRef(({ label, onChange = () => {}, clearInput, inputClassName, rootClassName, labelClassName, children = () => {}, ...props }, ref) => {
   let inputRef = useRef(null);
   let inputId = useId();
   const [isDirty, setIsDirty] = useState(false);
@@ -12,6 +12,13 @@ const InputField = forwardRef(({ label, onChange = () => {}, inputClassName, roo
   //     setIsDirty(false);
   //   }
   // }, [props.value]);
+
+  useEffect(() => {
+    console.log("clear input chnag--e----->", clearInput);
+    if (clearInput) {
+      setIsDirty(false);
+    }
+  }, [clearInput]);
 
   return (
     <div
@@ -32,7 +39,7 @@ const InputField = forwardRef(({ label, onChange = () => {}, inputClassName, roo
         onChange={(e) => {
           onChange(e);
           // console.log("chage", e.target.value, ref, inputRef.current);
-          console.log("on changes");
+          console.log("on changes", e.target.value.length);
           if (e.target.value.length > 0) {
             // console.log("setting true");
             setIsDirty((val) => true);

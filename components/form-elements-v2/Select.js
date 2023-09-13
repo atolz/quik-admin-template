@@ -1,6 +1,6 @@
 import React from "react";
 
-const Select = ({ onChange, label = "", inputClassName, rootClassName, labelClassName, ...props }) => {
+const Select = ({ onChange = () => {}, label = "", placeholder, inputClassName, items = ["Love", "Hate", "Barney"], rootClassName, labelClassName, ...props }) => {
   return (
     <div className={` flex flex-col ${rootClassName}`}>
       {label && (
@@ -24,12 +24,16 @@ const Select = ({ onChange, label = "", inputClassName, rootClassName, labelClas
         name="cars"
         id="cars"
       >
-        <option className="cu cursor-pointer" value="newest_first">
-          Sort by Most Recent
+        <option value="" disabled selected>
+          {placeholder}
         </option>
-        <option className="cu cursor-pointer" value="oldest_first">
-          Sort by Oldest
-        </option>
+        {items.map((el, i) => {
+          return (
+            <option key={i} className="cu cursor-pointer" value={el}>
+              {el}
+            </option>
+          );
+        })}
       </select>
     </div>
   );
