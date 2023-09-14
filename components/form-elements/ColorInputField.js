@@ -29,8 +29,8 @@ const ColorInputField = forwardRef(({ value = "#9B51E0", onChange = () => {}, in
         {...props}
         ref={ref || inputRef}
         type="color"
-        inputClassName={`!pr-[100%] !py-5  w-0  overflow-hidden  ${inputClassName}`}
-        rootClassName={`${rootClassName}`}
+        inputClassName={`!pr-[100%] !py-5  w-0  overflow-hidden absolute ${inputClassName}`}
+        rootClassName={`  ${rootClassName}`}
         value={value}
         onChange={handleColorChange}
         style={{

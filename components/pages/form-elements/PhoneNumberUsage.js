@@ -40,7 +40,7 @@ const PhoneNumberUsage = () => {
             value={value}
             onChange={onValueChange}
             inputComponent={forwardRef(function Wrapper({ ...props }, ref) {
-              return <InputFieldV2 rootClassName=" flex-1" inputClassName=" pl-14" input ref={ref} {...props} />;
+              return <InputFieldV2 rootClassName=" flex-1" inputClassName=" pl-14" ref={ref} {...props} />;
             })}
           />
         </UsageContainer>
