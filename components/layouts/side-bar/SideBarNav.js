@@ -39,6 +39,13 @@ const SideBarNav = ({ setIsMobileNavOpened, isMobileNavOpened }) => {
       icon: <IconMedal size={24} strokeWidth={2} />,
     },
     {
+      name: "Cards",
+      pageLink: `/cards`,
+      navLink: `/cards`,
+      page: "admin",
+      icon: <IconMedal size={24} strokeWidth={2} />,
+    },
+    {
       name: "Tables",
       pageLink: `/tables`,
       navLink: `/tables`,
