@@ -4,6 +4,7 @@ import DefaultTableUsage from "@/components/pages/tables/DefaultTableUsage";
 import TableUsage from "@/components/pages/tables/TableUsage";
 import TableUsageWithStylesAndVariations from "@/components/pages/tables/TableUsageWithStylesAndVariations";
 import Tab from "@/components/tabs/Tab";
+import TabV2 from "@/components/tabs/TabV2";
 import React, { useState } from "react";
 
 const Tables = () => {
@@ -43,6 +44,7 @@ const Tables = () => {
       <div className=" max-w-6xl">
         <DemoCssVar />
         <Tab active={activeTabIndex} setActive={setActiveTabIndex} onChange={onTabChange} items={filterItems} />
+        <TabV2 className={""} active={activeTabIndex} setActive={setActiveTabIndex} onChange={onTabChange} items={filterItems} />
         <DefaultTableUsage data={filteredData} />
         <TableUsageWithStylesAndVariations data={filteredData} />
       </div>
