@@ -49,7 +49,7 @@ const StatAreaChart = () => {
   ];
 
   return (
-    <ContainerShadow className={" !pb-10  !px-2 sm:!px-[34px]"}>
+    <ContainerShadow className={" !pb-10 !pt-6  !px-2 sm:!px-[34px]"}>
       <h2 className=" font-semibold text-lg mb-[42px] text-[#121528]/60">
         Total Visits<span className="text-[#121528]"> - 130</span>
       </h2>
@@ -62,7 +62,7 @@ const StatAreaChart = () => {
             margin={{
               top: 0,
               right: 20,
-              left: -10,
+              left: -18,
               bottom: 0,
             }}
           >
