@@ -31,13 +31,13 @@ const ProfileSidebar = () => {
           </div>
         </div>
         {/* Work */}
-        <div>
+        {/* <div>
           <h3 className=" text-color_text_default text-sm font-semibold mb-6">Work</h3>
           <div className=" grid gap-6">
             <DetailRow icon={<IconMessage />} text={"UI/UX Designer"} />
             <DetailRow icon={<IconMessage />} text={"I.T Department"} />
           </div>
-        </div>
+        </div> */}
       </div>
     </ContainerShadow>
   );
