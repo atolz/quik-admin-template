@@ -23,14 +23,20 @@
 }
 
 :root {
-  --color-primary: #023E4F;
-  --color-secondary: #01789A;
+  --color-primary: #81CF03;
+  --color-primary--dark: #6daf02;
+  --color-secondary: #004824;
+  --color-secondary--light: #013b1e;
   --color-dark-1: #2A2E3F;
-  --color-text-default: #828282;
+  --color-text-default: #000;
+  /* --color-text-default: #828282; */
   --color-grey-1: #858484;
-  --color-bg: #F6FBFD;
+  /* --color-bg: #F6FBFD; */
+  --color-bg-2: #E6EDEA;
+  --color-bg: #F8F8F8;
   --color-border: #DFE1E6;
-  /* --PhoneInput-color--focus: var(--color-primary) !important; */
+  --color-warn: #FEB821;
+  --color-error: #EB5757;
 }
 
 input[type="date"]:in-range::-webkit-datetime-edit-year-field, input[type="date"]:in-range::-webkit-datetime-edit-month-field, input[type="date"]:in-range::-webkit-datetime-edit-day-field, input[type="date"]:in-range::-webkit-datetime-edit-text {

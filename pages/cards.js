@@ -7,6 +7,7 @@ import NairaSymbol from "@/components/common/NairaSymbol";
 import SideBarLayout from "@/components/layouts/SideBarLayout";
 import TagsV1 from "@/components/tags/TagsV1";
 import TagsV2 from "@/components/tags/TagsV2";
+import IconCircleContainer from "@/components/common/IconContainerCircle";
 
 const Cards = () => {
   const stats = [
@@ -80,10 +81,8 @@ const Cards = () => {
     {
       name: "Total Views",
       value: (
-        <div className="flex items-center text-2xl text-[#2F80ED]">
-          <div className=" w-8 h-8 rounded-full bg-[#2f81ed83]  flex items-center justify-center mr-4">
-            <IconUsersGroup size={16} />
-          </div>
+        <div className="flex items-center text-2xl ">
+          <IconCircleContainer className=" text-[#2F80ED] bg-[#2F80ED]/50" Icon={<IconUsersGroup size={16} />} />
           <span>4000</span>
         </div>
         // <span className="text-[#2F80ED] text-2xl flex items-center">

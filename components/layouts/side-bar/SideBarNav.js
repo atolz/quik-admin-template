@@ -2,7 +2,22 @@ import useToggleMobileNav from "@/hooks/useToggleMobileNav";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { IconForms, IconMedal, IconTable } from "@tabler/icons-react";
+import {
+  IconBell,
+  IconBellFilled,
+  IconDashboard,
+  IconForms,
+  IconHome,
+  IconMedal,
+  IconSettings,
+  IconSettings2,
+  IconSettingsFilled,
+  IconTable,
+  IconUserBolt,
+  IconUsers,
+  IconUsersGroup,
+  IconWallet,
+} from "@tabler/icons-react";
 
 const SideBarNav = ({ setIsMobileNavOpened, isMobileNavOpened }) => {
   const router = useRouter();
@@ -10,54 +25,46 @@ const SideBarNav = ({ setIsMobileNavOpened, isMobileNavOpened }) => {
 
   const defaultNavs = [
     {
-      name: "Page One - Extra long name for test",
+      name: "Dashboard",
       pageLink: `/`,
       navLink: "/",
       page: "admin",
-      icon: <IconMedal size={24} strokeWidth={2} />,
+      icon: <IconHome size={20} strokeWidth={2} />,
     },
     {
-      name: "Dialog/Modal",
-      pageLink: `/dialog`,
-      navLink: `/dialog`,
+      name: "Members",
+      pageLink: `/members`,
+      navLink: "/members",
       page: "admin",
-      icon: <IconMedal size={24} strokeWidth={2} />,
+      icon: <IconUsers size={20} strokeWidth={2} />,
     },
     {
-      name: "Page With Details Page",
-      pageLink: `/page-with-details-page`,
-      navLink: `/page-with-details-page`,
+      name: "Transactions",
+      pageLink: `/transactions`,
+      navLink: "/transactions",
       page: "admin",
-      icon: <IconMedal size={24} strokeWidth={2} />,
-    },
-
-    {
-      name: "Form Elements",
-      pageLink: `/form-elements`,
-      navLink: `/form-elements`,
-      page: "admin",
-      icon: <IconMedal size={24} strokeWidth={2} />,
+      icon: <IconWallet size={20} strokeWidth={2} />,
     },
     {
-      name: "Cards",
-      pageLink: `/cards`,
-      navLink: `/cards`,
+      name: "Notification Management",
+      pageLink: `/notification`,
+      navLink: "/notification",
       page: "admin",
-      icon: <IconMedal size={24} strokeWidth={2} />,
+      icon: <IconBell size={20} strokeWidth={2} />,
     },
     {
-      name: "Tables",
-      pageLink: `/tables`,
-      navLink: `/tables`,
+      name: "Support",
+      pageLink: `/support`,
+      navLink: "/support",
       page: "admin",
-      icon: <IconMedal size={24} strokeWidth={2} />,
+      icon: <IconUsersGroup type="Filled" size={20} strokeWidth={2} />,
     },
     {
-      name: "Components Docs",
-      pageLink: `/docs`,
-      navLink: `/docs`,
+      name: "Settings",
+      pageLink: `/settings`,
+      navLink: "/settings",
       page: "admin",
-      icon: <IconMedal size={24} strokeWidth={2} />,
+      icon: <IconSettings size={24} strokeWidth={2} />,
     },
   ];
 
@@ -86,11 +93,11 @@ const SideBarNav = ({ setIsMobileNavOpened, isMobileNavOpened }) => {
               onClick={() => {
                 setIsMobileNavOpened(false);
               }}
-              className={` h-8 mb-6 px-7 flex items-center cursor-pointer ${isActive(nav.navLink) ? " border-l-2 border-color-secondary" : " border-l-2 border-transparent"} `}
+              className={` mb-4 px-5 py-3 flex items-center cursor-pointer rounded-xl ${isActive(nav.navLink) ? " bg-[rgba(129,207,3,0.6)]" : " border-l-2 border-transparent"} `}
             >
-              <span className={`flex items-center  ${isActive(nav.navLink) ? " text-color-secondary" : " text-white"}`}>
-                {nav?.icon}
-                <span title={nav.name} className={`ml-6 line-clamp-1  text-base font-normal ${isActive(nav.navLink) ? " text-color-secondary" : " text-white"}`}>
+              <span className={`flex items-center  ${isActive(nav.navLink) ? " text-white" : " text-white"}`}>
+                <div className=" w-6 h-6">{nav?.icon}</div>
+                <span title={nav.name} className={`ml-3 line-clamp-1  text-base font-light ${isActive(nav.navLink) ? " text-white !font-medium" : " text-white"}`}>
                   {nav.name}
                 </span>
               </span>

@@ -7,12 +7,12 @@ const SideBar = ({ setIsMobileNavOpened, isMobileNavOpened }) => {
   const router = useRouter();
   return (
     <aside
-      className={` py-10 bg-color_dark_1 flex-grow-0 flex-shrink-0 fixed md:relative w-screen md:w-72 h-[calc(100vh-4rem)] md:h-screen bottom-0 left-0  ${
+      className={` py-10 px-8 bg-black flex-grow-0 flex-shrink-0 fixed md:relative w-screen md:w-72 h-[calc(100vh-4rem)] md:h-screen bottom-0 left-0  ${
         isMobileNavOpened ? "  z-[10000000]" : " !hidden md:!block"
       }`}
     >
       <nav>
-        <AppLogo className={" hidden md:flex pl-8 mb-12"}>App Logo</AppLogo>
+        <AppLogo className={"  hidden md:flex mb-12"}></AppLogo>
         <SideBarNav isMobileNavOpened={isMobileNavOpened} setIsMobileNavOpened={setIsMobileNavOpened} />
       </nav>
     </aside>

@@ -5,16 +5,16 @@ const Button = ({ loading, outlined, children, className = " ", hasFocusStyle = 
   return (
     <button
       disabled={loading}
-      className={`flex items-center text-white  bg-color-primary hover:bg-[rgba(2,62,79,0.95)] whitespace-nowrap text-ellipsis overflow-hidden ${
-        hasFocusStyle ? " md:focus:ring-4 md:focus:ring-[#023e4f70]" : " "
-      }   //disabled:bg-green-400 font-medium rounded-full text-sm h-10 px-7 py-2.5 dark:color-primary dark:hover:bg-[rgba(2,62,79,0.95)] focus:outline-none dark:focus:ring-[#023e4f70] justify-center
+      className={`flex items-center text-color-secondary  bg-color-primary hover:bg-color-primary-dark whitespace-nowrap text-ellipsis overflow-hidden ${
+        hasFocusStyle ? " md:focus:ring-2 focus:ring-offset-2 md:focus:ring-color-primary-dark" : " "
+      }   //disabled:bg-green-400 font-medium rounded-lg text-sm h-12 px-9 py-2.5 dark:color-primary dark:hover:bg-[rgba(2,62,79,0.95)] focus:outline-none dark:focus:ring-[#023e4f70]  justify-center
       //disabled:grayscale 
       disabled:bg-[#BDBDBD]
       ${
         outlined &&
         " !text-color-primary bg-transparent border border-color-primary focus:outline-none hover:bg-gray-100  font-medium rounded-full text-sm px-5 py-2.5  dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
       }
-      ${loading && ` cursor-not-allowed ${outlined ? " bg-transparent" : " !bg-[rgba(2,62,79,0.62)]"} `} ${className} ${props.disabled ? "cursor-not-allowed" : ""}`}
+      ${loading && ` cursor-not-allowed ${outlined ? " bg-transparent" : " !bg-[rgba(2,62,79,0.62)]"} `} ${className} ${props.disabled ? "cursor-not-allowed !bg-[#D6D6D6] !text-[#828282]" : ""}`}
       type="button"
       {...props}
     >
