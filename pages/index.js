@@ -7,6 +7,8 @@ import NairaSymbol from "@/components/common/NairaSymbol";
 import { IconChartBar, IconTicket, IconUsersGroup, IconWallet } from "@tabler/icons-react";
 import formatNumberWithCommas from "@/utils/addCommas";
 import IconCircleContainer from "@/components/common/IconContainerCircle";
+import ContainerShadow from "@/components/layouts/containers/ContainerShadow";
+import StatAreaChart from "@/components/pages/Dashboard/StatAreaChart";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -155,6 +157,7 @@ export default function Home() {
           })}
         </div>
       </div>
+      <StatAreaChart />
       <div>
         <h2 className=" text-black text-xl font-semibold mb-6">Transactions</h2>
         <div className=" grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-4 px-2">
